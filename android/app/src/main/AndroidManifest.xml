@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dashboard">
+    package="com.guibvr.dashboardexample">
    <application
         android:label="dashboard"
         android:name="${applicationName}"

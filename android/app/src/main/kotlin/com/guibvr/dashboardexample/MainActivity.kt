@@ -1,4 +1,4 @@
-package com.example.dashboard
+package com.guibvr.dashboardexample
 
 import io.flutter.embedding.android.FlutterActivity
 
