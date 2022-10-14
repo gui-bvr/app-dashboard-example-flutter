@@ -1,5 +1,4 @@
-import 'package:dashboard/screens/login_screen/welcome_screen.dart';
-import 'package:dashboard/utils/colors.dart';
+import 'package:dashboard/modules/login_screen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,11 +12,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dashboard',
-      theme: ThemeData(
-        primaryColor: primaryColor,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: WelcomeScreen(),
+      home: LoginScreen(),
     );
   }
 }

@@ -25,6 +25,8 @@ dependencies:
   page_transition: ^2.0.9
   splashscreen: ^1.3.5
   sizer: ^2.0.15
+  firebase_auth: ^3.11.2
+
 
 dev_dependencies:
   flutter_test:
