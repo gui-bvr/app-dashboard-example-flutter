@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-
+import '../../services/auth_service.dart';
 import '../../utils/colors.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,6 +14,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final authService = Provider.of<AuthService>(context);
     return Sizer(
       builder: (context, orientation, deviceType) {
         return Scaffold(
@@ -53,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Email',
@@ -72,6 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
+                        controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -82,27 +85,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(height: 5.h),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 140),
-                  child: Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Login',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15.sp,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w600,
+                GestureDetector(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 140),
+                      child: Container(
+                        padding: EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Login',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.sp,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ),
+                    onTap: () {
+                      authService.signInWithEmailAndPassword(
+                        emailController.text,
+                        passwordController.text,
+                      );
+                    }),
                 SizedBox(height: 2.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

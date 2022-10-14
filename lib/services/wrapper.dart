@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:dashboard/modules/home_screen/home_screen.dart';
-import 'package:dashboard/modules/login_screen/login_screen.dart';
-import 'package:dashboard/services/auth_service.dart';
+import '../modules/home_screen/home_screen.dart';
+import '../modules/login_screen/login_screen.dart';
+import '../services/auth_service.dart';
 import '../modules/login_screen/models/user_model.dart';
 
 class Wrapper extends StatelessWidget {
