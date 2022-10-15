@@ -1,9 +1,4 @@
-import 'package:dashboard/modules/login_screen/login_screen.dart';
-import 'package:dashboard/services/auth_service.dart';
-import 'package:dashboard/services/wrapper.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'routes/app_imports.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,14 +17,11 @@ class MyApp extends StatelessWidget {
           create: (_) => AuthService(),
         ),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Dashboard Example',
-        initialRoute: '/',
-        routes: {
-          '/': (context) => Wrapper(),
-          '/login': (context) => LoginScreen(),
-        },
+        initialRoute: AppRoutes.initial,
+        getPages: AppPages.pages,
       ),
     );
   }
