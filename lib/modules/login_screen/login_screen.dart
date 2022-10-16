@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:sizer/sizer.dart';
-import '../../services/auth_service.dart';
-import '../../utils/colors.dart';
+import '../../routes/app_imports.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -14,9 +10,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final authService = Provider.of<AuthService>(context);
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
     return Sizer(
       builder: (context, orientation, deviceType) {
         return Scaffold(
@@ -108,9 +103,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     onTap: () {
-                      authService.signInWithEmailAndPassword(
-                        emailController.text,
-                        passwordController.text,
+                      AuthController.authInstance.login(
+                        emailController.text.trim(),
+                        passwordController.text.trim(),
                       );
                     }),
                 SizedBox(height: 2.h),

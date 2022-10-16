@@ -4,11 +4,11 @@ abstract class AppPages {
   static final List<GetPage> pages = [
     GetPage(
       name: AppRoutes.initial,
-      page: () => Wrapper(),
+      page: () => LoginScreen(),
     ),
     GetPage(
-      name: AppRoutes.login,
-      page: () => LoginScreen(),
+      name: AppRoutes.home,
+      page: () => HomeScreen(),
     )
   ];
 }
