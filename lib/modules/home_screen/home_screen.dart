@@ -13,45 +13,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return Scaffold(
+          drawer: SideBar(),
           body: Column(
             children: [
               SizedBox(height: 8.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(width: 1.w),
-                  IconButton(
-                    onPressed: () => {},
-                    icon: Icon(Ionicons.menu_outline),
-                    iconSize: 22.sp,
-                  ),
-                  SizedBox(width: 1.w),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        greeting(),
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16.sp,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      SizedBox(height: 2),
-                      Text(
-                        'Dashboard',
-                        style: TextStyle(
-                          color: primaryGreyColor,
-                          fontSize: 20.sp,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              HeaderHomeScreen(),
               SizedBox(height: 40),
             ],
           ),
