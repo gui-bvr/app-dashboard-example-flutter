@@ -5,6 +5,7 @@ export 'package:get/get.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:sizer/sizer.dart';
+export 'package:ionicons/ionicons.dart';
 //Files
 export 'app_routes.dart';
 export '../../utils/colors.dart';

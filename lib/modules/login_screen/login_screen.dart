@@ -15,86 +15,124 @@ class _LoginScreenState extends State<LoginScreen> {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return Scaffold(
-          backgroundColor: loginBackground,
+          backgroundColor: primaryBackground,
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Olá!...',
+                  'Login',
                   style: TextStyle(
-                    fontSize: 28.sp,
+                    fontSize: 30.sp,
                     fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
-                SizedBox(height: 0.5.h),
-                Text(
-                  'Faça seu login abaixo.',
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w400,
-                  ),
+                SizedBox(height: 8.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 45),
+                    Text(
+                      'Email',
+                      style: TextStyle(
+                        fontSize: 11.sp,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 5.h),
+                SizedBox(height: 5),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: loginSecundaryBackground,
-                      border: Border.all(color: Colors.white),
+                      color: Colors.white,
+                      border: Border.all(color: primaryGreyColor),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 0),
                       child: TextField(
                         controller: emailController,
                         decoration: InputDecoration(
+                          prefixIcon: Icon(Ionicons.at),
                           border: InputBorder.none,
-                          hintText: 'Email',
+                          hintText: 'Digite seu email',
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 1.h),
+                SizedBox(height: 2.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 45),
+                    Text(
+                      'Senha',
+                      style: TextStyle(
+                        fontSize: 11.sp,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 5),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: loginSecundaryBackground,
-                        border: Border.all(color: Colors.white),
+                        color: Colors.white,
+                        border: Border.all(color: primaryGreyColor),
                         borderRadius: BorderRadius.circular(10)),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 0),
                       child: TextField(
                         controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
+                          prefixIcon: Icon(Ionicons.lock_closed_outline),
                           border: InputBorder.none,
-                          hintText: 'Senha',
+                          hintText: 'Digite sua senha',
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 5.h),
+                SizedBox(height: 3.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Esqueceu sua senha?',
+                      style: TextStyle(
+                        fontSize: 11.sp,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(width: 28),
+                  ],
+                ),
+                SizedBox(height: 3.h),
                 GestureDetector(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 140),
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: Container(
-                        padding: EdgeInsets.all(15),
+                        padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: Colors.deepPurple,
+                          color: primaryGreyColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Center(
                           child: Text(
-                            'Login',
+                            'LOGIN',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 15.sp,
+                              fontSize: 12.sp,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w600,
                             ),
@@ -108,13 +146,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         passwordController.text.trim(),
                       );
                     }),
-                SizedBox(height: 2.h),
+                SizedBox(height: 3.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Registre-se ',
                       style: TextStyle(
+                        color: primaryGreyColor,
                         fontSize: 12.sp,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.w600,
