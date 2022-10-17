@@ -31,4 +31,12 @@ class AuthController extends GetxController {
       print(e.toString());
     }
   }
+
+  void signOut() {
+    try {
+      auth.signOut();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 }

@@ -118,23 +118,26 @@ class _SideBarState extends State<SideBar> {
                   ),
                 ),
                 SizedBox(height: 3.h),
-                Row(
-                  children: [
-                    Icon(
-                      Ionicons.log_out_outline,
-                      color: secondaryGreyColor,
-                      size: 15.sp,
-                    ),
-                    Text(
-                      '  Logout',
-                      style: TextStyle(
+                GestureDetector(
+                  onTap: () => AuthController.authInstance.signOut(),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Ionicons.log_out_outline,
                         color: secondaryGreyColor,
-                        fontSize: 15.sp,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w600,
+                        size: 15.sp,
                       ),
-                    ),
-                  ],
+                      Text(
+                        '  Logout',
+                        style: TextStyle(
+                          color: secondaryGreyColor,
+                          fontSize: 15.sp,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
