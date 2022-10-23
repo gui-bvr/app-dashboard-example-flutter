@@ -8,6 +8,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool _obscurePassword = true;
+
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
@@ -92,9 +94,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.only(left: 0),
                       child: TextField(
                         controller: passwordController,
-                        obscureText: true,
+                        obscureText: _obscurePassword,
                         decoration: InputDecoration(
                           prefixIcon: Icon(Ionicons.lock_closed_outline),
+                          suffixIcon: InkWell(
+                            onTap: () {
+                              setState(() {
+                                _obscurePassword = !_obscurePassword;
+                              });
+                            },
+                            child: Icon(
+                              _obscurePassword
+                                  ? Ionicons.eye_off
+                                  : Ionicons.eye,
+                            ),
+                          ),
                           border: InputBorder.none,
                           hintText: 'Digite sua senha',
                         ),

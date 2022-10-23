@@ -11,7 +11,6 @@ class _ForgottenScreenState extends State<ForgottenScreen> {
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
-    var passwordController = TextEditingController();
     return Sizer(
       builder: (context, orientation, deviceType) {
         return Scaffold(
@@ -68,9 +67,8 @@ class _ForgottenScreenState extends State<ForgottenScreen> {
                 SizedBox(height: 8.h),
                 GestureDetector(
                   onTap: () {
-                    AuthController.authInstance.register(
+                    AuthController.authInstance.forgotten(
                       emailController.text.trim(),
-                      passwordController.text.trim(),
                     );
                   },
                   child: Padding(

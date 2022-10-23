@@ -23,6 +23,8 @@ export '../services/auth_controller.dart';
 export '../services/auth_constants.dart';
 export '../modules/home_screen/models/header.dart';
 export '../modules/home_screen/models/sidebar.dart';
+export '../modules/home_screen/models/categories.dart';
+export '../modules/home_screen/models/options.dart';
 export '../modules/example_screen/example_screen.dart';
 export '../modules/example_screen/models/header.dart';
 export '../modules/example_screen/models/animation.dart';

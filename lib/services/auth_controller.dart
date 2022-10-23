@@ -32,6 +32,76 @@ class AuthController extends GetxController {
     }
   }
 
+  void forgotten(String email) async {
+    try {
+      await auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+      Get.rawSnackbar(
+        titleText: Text(
+          'Erro ao Recuperar',
+          style: TextStyle(
+            color: primaryBackground,
+            fontSize: 12.sp,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        messageText: Text(
+          'Digite um email válido!',
+          style: TextStyle(
+            color: primaryBackground,
+            fontSize: 11.sp,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        icon: Icon(
+          Ionicons.close_circle_outline,
+          color: primaryBackground,
+          size: 25.sp,
+        ),
+        margin: EdgeInsets.all(20),
+        borderRadius: 10,
+        backgroundColor: primaryGreyColor,
+        duration: Duration(seconds: 3),
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    } catch (e) {
+      print(e.toString());
+      Get.rawSnackbar(
+        titleText: Text(
+          'Email enviado',
+          style: TextStyle(
+            color: primaryBackground,
+            fontSize: 12.sp,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        messageText: Text(
+          'Um email foi enviado para recuperar sua senha!',
+          style: TextStyle(
+            color: primaryBackground,
+            fontSize: 11.sp,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        icon: Icon(
+          Ionicons.mail,
+          color: primaryBackground,
+          size: 25.sp,
+        ),
+        margin: EdgeInsets.all(20),
+        borderRadius: 10,
+        backgroundColor: primaryGreyColor,
+        duration: Duration(seconds: 3),
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+  }
+
   void register(String email, String password) async {
     try {
       await auth.createUserWithEmailAndPassword(

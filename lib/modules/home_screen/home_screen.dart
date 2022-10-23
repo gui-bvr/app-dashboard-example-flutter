@@ -17,8 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
           body: Column(
             children: [
               SizedBox(height: 8.h),
-              HeaderHomeScreen(),
-              SizedBox(height: 40),
+              HomeHeader(),
+              //SizedBox(height: 40),
+              HomeCategories(),
+              HomeOptions(),
             ],
           ),
         );

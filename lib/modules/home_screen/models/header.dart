@@ -1,13 +1,13 @@
 import '../../../routes/app_imports.dart';
 
-class HeaderHomeScreen extends StatefulWidget {
-  const HeaderHomeScreen({super.key});
+class HomeHeader extends StatefulWidget {
+  const HomeHeader({super.key});
 
   @override
-  State<HeaderHomeScreen> createState() => _HeaderState();
+  State<HomeHeader> createState() => _HeaderState();
 }
 
-class _HeaderState extends State<HeaderHomeScreen> {
+class _HeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
     return Sizer(
