@@ -7,6 +7,10 @@ abstract class AppPages {
       page: () => LoginScreen(),
     ),
     GetPage(
+      name: AppRoutes.register,
+      page: () => RegisterScreen(),
+    ),
+    GetPage(
       name: AppRoutes.home,
       page: () => HomeScreen(),
     ),

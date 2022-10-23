@@ -1,13 +1,13 @@
 import '../../routes/app_imports.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
@@ -21,14 +21,14 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Login',
+                  'Registrar',
                   style: TextStyle(
                     fontSize: 30.sp,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                SizedBox(height: 8.h),
+                SizedBox(height: 6.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -102,36 +102,45 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 3.h),
+                SizedBox(height: 2.h),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    GestureDetector(
-                      child: Text(
-                        'Esqueceu sua senha?',
-                        style: TextStyle(
-                          fontSize: 11.sp,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w400,
-                        ),
+                    SizedBox(width: 45),
+                    Text(
+                      'Confirmar',
+                      style: TextStyle(
+                        fontSize: 11.sp,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.w500,
                       ),
-                      onTap: () {
-                        Get.defaultDialog(
-                          title: "Welcome to Flutter Dev'S",
-                          middleText:
-                              "FlutterDevs is a protruding flutter app development company with "
-                              "an extensive in-house team of 30+ seasoned professionals who know "
-                              "exactly what you need to strengthen your business across various dimensions",
-                          backgroundColor: primaryGreyColor,
-                          titleStyle: TextStyle(color: Colors.white),
-                          middleTextStyle: TextStyle(color: Colors.white),
-                          radius: 10,
-                        );
-                      },
                     ),
-                    SizedBox(width: 28),
                   ],
                 ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: primaryGreyColor),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 0),
+                      child: TextField(
+                        controller: passwordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Ionicons.lock_closed_outline),
+                          border: InputBorder.none,
+                          hintText: 'Repita sua senha',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 3.h),
+                SizedBox(width: 28),
                 SizedBox(height: 3.h),
                 GestureDetector(
                   child: Padding(
@@ -144,7 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          'LOGIN',
+                          'REGISTRAR',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12.sp,
@@ -167,7 +176,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Registre-se ',
+                      'Voltar para o ',
                       style: TextStyle(
                         color: primaryGreyColor,
                         fontSize: 12.sp,
@@ -176,11 +185,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Get.toNamed('register');
-                      },
+                      onTap: () => Get.back(),
                       child: Text(
-                        'aqui',
+                        'Login',
                         style: TextStyle(
                           color: Colors.blue,
                           fontSize: 12.sp,

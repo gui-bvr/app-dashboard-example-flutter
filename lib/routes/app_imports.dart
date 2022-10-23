@@ -13,6 +13,7 @@ export 'app_routes.dart';
 export '../../utils/colors.dart';
 export '../../utils/datetime.dart';
 export '../modules/login_screen/login_screen.dart';
+export '../modules/login_screen/register_screen.dart';
 export '../routes/app_pages.dart';
 export '../modules/home_screen/home_screen.dart';
 export '../services/auth_controller.dart';
