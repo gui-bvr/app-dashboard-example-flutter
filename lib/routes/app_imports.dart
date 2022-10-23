@@ -1,5 +1,6 @@
 //Material
 export 'package:flutter/material.dart';
+
 //Packages
 export 'package:get/get.dart';
 export 'package:firebase_core/firebase_core.dart';
@@ -8,12 +9,14 @@ export 'package:sizer/sizer.dart';
 export 'package:ionicons/ionicons.dart';
 export 'package:flutter_svg/flutter_svg.dart';
 export 'package:page_transition/page_transition.dart';
+
 //Files
 export 'app_routes.dart';
 export '../../utils/colors.dart';
 export '../../utils/datetime.dart';
 export '../modules/login_screen/login_screen.dart';
 export '../modules/login_screen/register_screen.dart';
+export '../modules/login_screen/forgotten_screen.dart';
 export '../routes/app_pages.dart';
 export '../modules/home_screen/home_screen.dart';
 export '../services/auth_controller.dart';

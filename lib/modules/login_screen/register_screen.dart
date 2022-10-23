@@ -102,47 +102,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 2.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 45),
-                    Text(
-                      'Confirmar',
-                      style: TextStyle(
-                        fontSize: 11.sp,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 5),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: primaryGreyColor),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 0),
-                      child: TextField(
-                        controller: passwordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Ionicons.lock_closed_outline),
-                          border: InputBorder.none,
-                          hintText: 'Repita sua senha',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
                 SizedBox(height: 3.h),
                 SizedBox(width: 28),
                 SizedBox(height: 3.h),
                 GestureDetector(
+                  onTap: () {
+                    AuthController.authInstance.register(
+                      emailController.text.trim(),
+                      passwordController.text.trim(),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: Container(
@@ -164,12 +133,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                   ),
-                  onTap: () {
-                    AuthController.authInstance.login(
-                      emailController.text.trim(),
-                      passwordController.text.trim(),
-                    );
-                  },
                 ),
                 SizedBox(height: 3.h),
                 Row(

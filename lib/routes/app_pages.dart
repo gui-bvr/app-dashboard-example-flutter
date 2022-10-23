@@ -11,6 +11,10 @@ abstract class AppPages {
       page: () => RegisterScreen(),
     ),
     GetPage(
+      name: AppRoutes.forgotten,
+      page: () => ForgottenScreen(),
+    ),
+    GetPage(
       name: AppRoutes.home,
       page: () => HomeScreen(),
     ),

@@ -1,13 +1,13 @@
 import '../../routes/app_imports.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class ForgottenScreen extends StatefulWidget {
+  const ForgottenScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgottenScreen> createState() => _ForgottenScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgottenScreenState extends State<ForgottenScreen> {
   @override
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Login',
+                  'Recuperar\nSua Senha',
                   style: TextStyle(
                     fontSize: 30.sp,
                     fontFamily: 'Montserrat',
@@ -65,67 +65,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 2.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 45),
-                    Text(
-                      'Senha',
-                      style: TextStyle(
-                        fontSize: 11.sp,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 5),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: primaryGreyColor),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 0),
-                      child: TextField(
-                        controller: passwordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(Ionicons.lock_closed_outline),
-                          border: InputBorder.none,
-                          hintText: 'Digite sua senha',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 3.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Get.toNamed('forgotten');
-                      },
-                      child: Text(
-                        'Esqueceu sua senha?',
-                        style: TextStyle(
-                          fontSize: 11.sp,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 28),
-                  ],
-                ),
-                SizedBox(height: 3.h),
+                SizedBox(height: 8.h),
                 GestureDetector(
                   onTap: () {
-                    AuthController.authInstance.login(
+                    AuthController.authInstance.register(
                       emailController.text.trim(),
                       passwordController.text.trim(),
                     );
@@ -140,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          'LOGIN',
+                          'RECUPERAR',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12.sp,
@@ -157,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Registre-se ',
+                      'Voltar para o ',
                       style: TextStyle(
                         color: primaryGreyColor,
                         fontSize: 12.sp,
@@ -166,11 +109,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {
-                        Get.toNamed('register');
-                      },
+                      onTap: () => Get.back(),
                       child: Text(
-                        'aqui',
+                        'Login',
                         style: TextStyle(
                           color: Colors.blue,
                           fontSize: 12.sp,
