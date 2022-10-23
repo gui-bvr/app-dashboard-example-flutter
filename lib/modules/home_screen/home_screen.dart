@@ -14,13 +14,19 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, orientation, deviceType) {
         return Scaffold(
           drawer: SideBar(),
-          body: Column(
+          //bottomNavigationBar: HomeNavbar(),
+          body: IndexedStack(
             children: [
-              SizedBox(height: 8.h),
-              HomeHeader(),
-              //SizedBox(height: 40),
-              HomeCategories(),
-              HomeOptions(),
+              Column(
+                children: [
+                  SizedBox(height: 8.h),
+                  HomeHeader(),
+                  SizedBox(height: 8.h),
+                  HomeOptions(),
+                  SizedBox(height: 12.h),
+                  HomeCategories(),
+                ],
+              ),
             ],
           ),
         );
