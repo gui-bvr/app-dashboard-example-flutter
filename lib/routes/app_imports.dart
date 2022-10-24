@@ -28,7 +28,7 @@ export '../modules/home_screen/models/sidebar.dart';
 export '../modules/home_screen/models/categories.dart';
 export '../modules/home_screen/models/options.dart';
 export '../modules/home_screen/models/navbar.dart';
-export '../modules/home_screen/models/example_navbar.dart';
+export '../modules/home_screen/models/graphic.dart';
 export '../modules/example_screen/example_screen.dart';
 export '../modules/example_screen/models/header.dart';
 export '../modules/example_screen/models/animation.dart';

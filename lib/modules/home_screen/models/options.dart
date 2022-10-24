@@ -24,8 +24,8 @@ class HomeOptions extends StatelessWidget {
                   child: InkWell(
                     onTap: () => Get.toNamed('/example'),
                     child: SizedBox(
-                      width: 45.w,
-                      height: 100,
+                      width: 160,
+                      height: 90,
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -80,8 +80,8 @@ class HomeOptions extends StatelessWidget {
                   child: InkWell(
                     onTap: () => Get.toNamed('/example'),
                     child: SizedBox(
-                      width: 45.w,
-                      height: 100,
+                      width: 160,
+                      height: 90,
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -141,8 +141,8 @@ class HomeOptions extends StatelessWidget {
                   child: InkWell(
                     onTap: () => Get.toNamed('/example'),
                     child: SizedBox(
-                      width: 45.w,
-                      height: 100,
+                      width: 160,
+                      height: 90,
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -197,8 +197,8 @@ class HomeOptions extends StatelessWidget {
                   child: InkWell(
                     onTap: () => Get.toNamed('/example'),
                     child: SizedBox(
-                      width: 45.w,
-                      height: 100,
+                      width: 160,
+                      height: 90,
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,

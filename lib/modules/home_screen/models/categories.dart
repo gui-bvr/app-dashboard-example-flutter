@@ -18,7 +18,7 @@ class HomeCategories extends StatelessWidget {
                   child: Text(
                     'Categorias',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: primaryGreyColor,
                       fontSize: 16.sp,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
