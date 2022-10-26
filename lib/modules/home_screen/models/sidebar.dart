@@ -20,6 +20,21 @@ class _SideBarState extends State<SideBar> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
+                padding: const EdgeInsets.only(left: 25, bottom: 15),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: primaryBackground,
+                      radius: 37.sp,
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage('assets/icons/logo.png'),
+                        radius: 35.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.only(left: 16.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
@@ -37,7 +52,7 @@ class _SideBarState extends State<SideBar> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 8.h),
                       GestureDetector(
                         onTap: () => Scaffold.of(context).closeDrawer(),
                         child: Row(
@@ -134,7 +149,7 @@ class _SideBarState extends State<SideBar> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 8.h),
                       Padding(
                         padding: EdgeInsets.only(right: 20.w),
                         child: Row(
