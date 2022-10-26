@@ -32,11 +32,20 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   change_app_package_name: ^1.1.0
 
+flutter_icons:
+  android: "launcher_icon"
+  image_path: "assets/icons/logo.png"
+  min_sdk_android: 16
+  adaptive_icon_background: "#353339"
+  adaptive_icon_foreground: "assets/icons/logo_adaptive.png"
+
 flutter:
   uses-material-design: true
 
   assets:
     - assets/animation/loading_dots.riv
+    - assets/icons/logo.png
+    - assets/icons/logo_adaptive.png
 
   fonts:
   - family: Montserrat

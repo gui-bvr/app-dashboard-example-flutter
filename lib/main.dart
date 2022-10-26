@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Dashboard Example',
+      title: 'Exemplo Dashboard',
       initialRoute: AppRoutes.initial,
       getPages: AppPages.pages,
     );
