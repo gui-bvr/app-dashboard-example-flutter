@@ -15,8 +15,6 @@
 
 Aplicação de exemplo de uma dashboard desenvolvida em Flutter para avaliação N2 da matéria de Desenvolvimento de Dispositivos Móveis.
 
-</br>
-
 ### Creditos
 
 Icones e logos feitos a partir do pacote [Ionicons](https://ionic.io/ionicons) do framework [Ionic](https://ionic.io/) e licenciada pela MIT license.
